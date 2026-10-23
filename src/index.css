@@ -1,0 +1,111 @@
+@import "./components/reactbits/SlideCommit.css";
+@import "./components/reactbits/SquishSwitch.css";
+@import "./components/reactbits/Stepper.css";
+@import "./components/reactbits/StatusMark.css";
+@import "./components/reactbits/GlideSelect.css";
+@import "./components/reactbits/CodeSlots.css";
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --font-serif: 'Instrument Serif', Georgia, serif;
+  --font-sans: 'Plus Jakarta Sans', Inter, -apple-system, sans-serif;
+  --font-mono: 'Fragment Mono', monospace;
+  color-scheme: light dark;
+}
+
+body {
+  font-family: var(--font-sans);
+  overflow-x: hidden;
+}
+
+/* SupaBird Typography utility */
+.font-editorial {
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-weight: 400;
+}
+
+/* Glassmorphism Navigation & Cards */
+.glass-nav {
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(0, 0, 0, 0.06);
+}
+
+.dark .glass-nav {
+  background: rgba(14, 16, 22, 0.82);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+/* Bento Card Styles with SupaBird luxury border & glow */
+.bento-card {
+  background: #ffffff;
+  border-radius: 1.5rem;
+  box-shadow: 0 4px 20px -2px rgba(0, 0, 0, 0.04), 0 2px 6px -1px rgba(0, 0, 0, 0.02);
+  border: 1px solid rgba(0, 0, 0, 0.06);
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.bento-card:hover {
+  box-shadow: 0 16px 36px -4px rgba(0, 0, 0, 0.08), 0 4px 12px -2px rgba(0, 0, 0, 0.03);
+  transform: translateY(-2px);
+}
+
+.dark .bento-card {
+  background: #11131a;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.4);
+  border: 1px solid rgba(255, 255, 255, 0.07);
+}
+
+.dark .bento-card:hover {
+  border-color: rgba(255, 255, 255, 0.15);
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.6), 0 0 30px rgba(243, 89, 33, 0.08);
+}
+
+/* Glowing Accent Border */
+.glow-border {
+  position: relative;
+}
+.glow-border::after {
+  content: '';
+  position: absolute;
+  inset: -1px;
+  background: linear-gradient(135deg, rgba(243, 89, 33, 0.5), rgba(0, 153, 255, 0.2), transparent 70%);
+  border-radius: inherit;
+  z-index: -1;
+  pointer-events: none;
+}
+
+/* Custom subtle scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(156, 163, 175, 0.4);
+  border-radius: 9999px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(156, 163, 175, 0.7);
+}
+
+/* Shimmer badge animation */
+@keyframes shimmerPulse {
+  0% { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
+}
+
+.badge-shimmer {
+  background: linear-gradient(90deg, #f35921 0%, #ff9500 50%, #f35921 100%);
+  background-size: 200% 100%;
+  animation: shimmerPulse 4s infinite linear;
+}
